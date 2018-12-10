@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom'
+import Login from './container/login/login.js';
+import Register from './container/register/register.js';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <BrowserRouter>
+          <div>
+            <Route path='' exact component={Login}/>
+            <Route path='/login' exact component={Login}/>
+            <Route path='/register' exact component={Register}/>
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
