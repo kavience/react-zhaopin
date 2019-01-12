@@ -60,3 +60,31 @@ import {BrowserRouter, Route} from 'react-router-dom'
 npm install node-sass --save
 `
 
+#### mongoose
+> 管理MongoDB
+
+#### react-redux
+>管理redux
+
+#### redux-thunk
+>thunk中间件
+
+#### utility
+>js加密库
+
+#### bodyPaser
+> bodyPaser
+
+#### cookiePaser
+> cookiePaser
+
+#### brwoser-cookies
+> 管理cookie
+
+#### socket.io
+> 提供socket服务端
+
+#### socket.io-client
+> 提供socket客户端
+
+
