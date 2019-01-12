@@ -4,7 +4,7 @@ const DB_URL = 'mongodb://localhost:27017/chat';
 
 mongoose.connect(DB_URL);
 
-
+// 创建两个模型 user与chat
 const models = {
     user: {
         'email': {type: String, require: true},

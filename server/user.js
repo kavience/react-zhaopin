@@ -4,8 +4,11 @@ const utility = require('utility');
 const Router = express.Router();
 
 const UserModel = model.getModel('user')
+
+// 过滤字段
 const _filter = {'password': 0, '__v': 0}
 
+// 获取指定用户信息
 Router.post('/info', function (req, res) {
     const {userid} = req.cookies
     if (!userid) {
@@ -21,6 +24,7 @@ Router.post('/info', function (req, res) {
     })
 })
 
+// 登录
 Router.post('/login', function (req, res) {
     const {email, password} = req.body;
 
@@ -35,6 +39,7 @@ Router.post('/login', function (req, res) {
     })
 })
 
+// 注册
 Router.post('/register', function (req, res) {
     const {email, nickname, password, confirm} = req.body;
 
@@ -56,12 +61,15 @@ Router.post('/register', function (req, res) {
     })
 
 })
+
+// 获取所有用户
 Router.get('/list', function (req, res) {
     UserModel.find({}, function (err, doc) {
-        return res.json({'code': 0, 'data': {'msg': '获取在线用户成功', 'data': doc}})
+        return res.json({'code': 0, 'data': {'msg': '获取所有用户成功', 'data': doc}})
     })
 })
 
+// 密码加密
 function md5pwd(password) {
     const salt = 'kavience';
 

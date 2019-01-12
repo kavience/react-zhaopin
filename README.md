@@ -2,6 +2,20 @@
 
 -------------------
 
+###目录说明:
+- config   配置目录
+- public   公共资源文件目录
+- scripts  框架自带js文件
+- server   服务端文件
+- src      客户端文件
+    - component 组件文件
+    - container 页面文件
+    - redux 常量与redux文件
+    - APP.js index.jx 入口文件
+    - reducer.js 包含所有的reducer文件
+    - store.js  包含store文件，扩展其它插件
+-------------------
+
 ### 项目包说明
 #### antd
 > 蚂蚁金服的react组件
@@ -86,5 +100,3 @@ npm install node-sass --save
 
 #### socket.io-client
 > 提供socket客户端
-
-

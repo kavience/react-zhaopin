@@ -5,11 +5,14 @@ const Router = express.Router();
 
 const ChatModel = model.getModel('chat')
 
+// 此处做测试用，直接查看所有聊天记录
 Router.get('/list', function (req, res) {
     ChatModel.find({}, function (err, doc) {
         return res.json({'code': 0, 'data': {'msg': '获取聊天记录成功', 'data': doc}})
     })
 })
+
+// 此处是获取某人与某人的聊天记录，需要传入两个不同的id
 Router.post('/list', function (req, res) {
     const {receiveid, sendid} = req.body
 
@@ -23,7 +26,7 @@ Router.post('/list', function (req, res) {
 
 })
 
-
+// 聊天信息存入MongoDB中
 Router.post('/creator', function (req, res) {
     const {sendid, text, receiveid} = req.body
 
