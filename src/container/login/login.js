@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import Logo from  '../../component/logo/logo.js';
+import AuthRouter from '../../component/authroute/authroute';
 import {
-    Form, Icon, Input, Button, Checkbox,
+    Form, Icon, Input, Button, Checkbox, message
 } from 'antd';
 import './login.scss';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
+import axios from 'axios';
 
 const FormItem = Form.Item;
 
@@ -13,7 +15,15 @@ class Login extends Component{
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
+                axios.post('/user/login', values).then((res) => {
+                    if (res.data.code === 0) {
+                        message.success(res.data.data.msg, 2, () => {
+                            this.props.history.push("/center/" + res.data.data.data._id);
+                        })
+                    } else {
+                        message.error(res.data.data.msg, 2);
+                    }
+                })
             }
         });
     };
@@ -24,13 +34,14 @@ class Login extends Component{
         return (
             <div className="login">
                 <Logo/>
+                <AuthRouter/>
 
                 <Form onSubmit={this.handleSubmit} className="login-form">
                     <FormItem>
-                        {getFieldDecorator('userName', {
-                            rules: [{ required: true, message: '请输入您的账号' }],
+                        {getFieldDecorator('email', {
+                            rules: [{ required: true, message: '请输入您的邮箱账号' }],
                         })(
-                            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="账号" />
+                            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="邮箱" />
                         )}
                     </FormItem>
                     <FormItem>
@@ -59,6 +70,7 @@ class Login extends Component{
         )
     }
 }
-const LoginForm = Form.create()(Login);
+Login = Form.create()(Login);
+Login = withRouter(Login);
 
-export default LoginForm;
+export default Login;

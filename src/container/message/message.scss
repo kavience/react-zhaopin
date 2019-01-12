@@ -1,0 +1,48 @@
+.message {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 10px;
+  font-size: 20px;
+  .message-header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    font-size: 25px;
+
+    .message-back {
+      width: 20px;
+      height: 20px;
+    }
+
+    .message-person {
+      margin: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+
+  .message-content {
+    flex-grow: 2;
+    overflow: scroll;
+    margin: 10px 5px;
+  }
+
+  .message-input-block {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    .message-input {
+      flex-grow: 1;
+      align-self: center;
+    }
+
+    .message-send {
+      align-self: center;
+    }
+  }
+}

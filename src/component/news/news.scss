@@ -1,0 +1,25 @@
+.news {
+  width: 100%;
+  height: auto;
+  font-size: 22px;
+  margin-bottom: 3px;
+  padding-left: 50%;
+  &.news-right {
+    padding-right: 10px;
+    text-align: right;
+    .news-info {
+      margin-right: 5px;
+      width: 100%;
+      border: 1px solid #f7f7f7;
+    }
+  }
+  &.news-left {
+    padding-left: 10px;
+    margin-left: 5px;
+    width: 50%;
+    .news-info {
+      border: 1px solid #f7f7f7;
+    }
+  }
+
+}

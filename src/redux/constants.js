@@ -1,0 +1,10 @@
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const ERROR_MSG = 'ERROR_MSG';
+export const GET_USER_INFO = 'GET_USER_INFO';
+export const GET_USER_LIST = 'GET_USER_LIST';
+export const CHANGE_NAV_ACTIVE = 'CHANGE_NAV_ACTIVE';
+export const CHANGE_MESSAGE = 'CHANGE_MESSAGE';
+export const SEND_MESSAGE = 'SEND_MESSAGE';
+export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
+export const UPDATE_MESSAGE = 'UPDATE_MESSAGE';
+export const GET_LIST = 'GET_LIST';
