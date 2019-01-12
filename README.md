@@ -16,6 +16,12 @@
     - store.js  包含store文件，扩展其它插件
 -------------------
 
+### 演示图片
+
+![演示图片](https://github.com/kavience/react-zhaopin/blob/master/public/static/show.gif?raw=true)
+
+> 我是拿某款录屏gif软件录的，导致点击发送消息的时候，发送了两次，实际上只有一次，原因应该是服务端触发了两次广播，懒得改了。。。将就看吧！
+-------------------
 ### 项目包说明
 #### antd
 > 蚂蚁金服的react组件
